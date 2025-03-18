@@ -1,5 +1,17 @@
 data "terraform_remote_state" "vpc" {
   backend = "local"
+<<<<<<< HEAD
+
+  config = {
+    path = "/home/jilna/terraform-learning/01-task/vpc/.terraform/terraform.tfstate"
+  }
+}
+
+resource "aws_instance" "test" {
+  ami           = "ami-00385a401487aefa4"
+  instance_type = "t3.micro"
+  subnet_id     = data.terraform_remote_state.vpc.outputs.subnet_public_1_id
+=======
   config = {
     path = "/home/jilna/terraform-learning/trial-1/vpc/terraform.tfstate"
   }
@@ -54,12 +66,17 @@ resource "aws_instance" "lab-ec2" {
     sudo systemctl enable nginx
   EOF
 
+>>>>>>> 94b39bc (Second commit)
 
   tags = {
     Name = "HelloWorld"
   }
+<<<<<<< HEAD
+}
+=======
 }
 
 
 
 
+>>>>>>> 94b39bc (Second commit)
